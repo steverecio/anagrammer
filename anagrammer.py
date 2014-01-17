@@ -49,6 +49,12 @@ def findAnagrams(word, numTries=100):
 
 if __name__ == '__main__':
     init()
-    anagrams = findAnagrams('steven', 1000)
-    for anagram in anagrams:
-        print anagram
+    try:
+        print 'Welcome to Anagrammer! Enter seed text to generate anagrams. Hit CTRL+D to exit.\n'
+        while True:
+            s = raw_input('anagram seed: ')
+            anagrams = findAnagrams(s, 1000)
+            for anagram in anagrams:
+                print anagram
+    except EOFError:
+        print 'Goodbye!'
